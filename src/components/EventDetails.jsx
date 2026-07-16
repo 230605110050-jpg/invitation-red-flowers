@@ -71,9 +71,20 @@ const EventDetails = () => {
               </div>
             </div>
           </div>
-          <button className="glass-button" style={{ marginTop: '1.5rem', fontSize: '0.9rem', padding: '8px 20px' }}>
-            View Map
-          </button>
+          <a href="https://maps.google.com/?q=Jakarta+Cathedral" target="_blank" rel="noreferrer" className="glass-button" style={{ display: 'inline-block', marginTop: '1.5rem', fontSize: '0.9rem', padding: '8px 20px', textDecoration: 'none' }}>
+            Open in Google Maps
+          </a>
+          <div style={{ marginTop: '1.5rem', width: '100%', height: '250px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', boxShadow: '0 4px 15px rgba(0,0,0,0.5)' }}>
+            <iframe 
+              width="100%" 
+              height="100%" 
+              frameBorder="0" 
+              style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(85%)' }} 
+              src="https://maps.google.com/maps?q=Jakarta+Cathedral&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+              allowFullScreen 
+              title="Ceremony Location"
+            />
+          </div>
         </div>
 
         <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, var(--glass-border), transparent)', margin: '0 2rem 3rem' }} />
@@ -100,9 +111,20 @@ const EventDetails = () => {
               </div>
             </div>
           </div>
-          <button className="glass-button" style={{ marginTop: '1.5rem', fontSize: '0.9rem', padding: '8px 20px' }}>
-            View Map
-          </button>
+          <a href="https://maps.google.com/?q=Jakarta" target="_blank" rel="noreferrer" className="glass-button" style={{ display: 'inline-block', marginTop: '1.5rem', fontSize: '0.9rem', padding: '8px 20px', textDecoration: 'none' }}>
+            Open in Google Maps
+          </a>
+          <div style={{ marginTop: '1.5rem', width: '100%', height: '250px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', boxShadow: '0 4px 15px rgba(0,0,0,0.5)' }}>
+            <iframe 
+              width="100%" 
+              height="100%" 
+              frameBorder="0" 
+              style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(85%)' }} 
+              src="https://maps.google.com/maps?q=Jakarta&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+              allowFullScreen 
+              title="Reception Location"
+            />
+          </div>
         </div>
 
       </div>

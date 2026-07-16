@@ -20,7 +20,7 @@ function App() {
 
   const handleOpenInvitation = () => {
     setIsExploding(true);
-    
+
     // Play transition sound effect
     const sfx = new Audio(sfxSound);
     sfx.volume = 0.6;
@@ -32,7 +32,7 @@ function App() {
 
     setTimeout(() => {
       setIsExploding(false);
-    }, 2500); 
+    }, 2500);
   };
 
   useEffect(() => {
@@ -53,7 +53,7 @@ function App() {
 
       {/* Music Control Button */}
       {isOpen && (
-        <button 
+        <button
           onClick={() => {
             if (audioRef.current) {
               if (isPlaying) audioRef.current.pause();
@@ -105,14 +105,14 @@ function App() {
           {Array.from({ length: 60 }).map((_, i) => {
             const angle = (Math.PI * 2 * i) / 60;
             // Keep them clustered tighter but huge
-            const distance = Math.random() * 500; 
+            const distance = Math.random() * 500;
             const tx = `${Math.cos(angle) * distance}px`;
             const ty = `${Math.sin(angle) * distance}px`;
             const rot = `${Math.random() * 360}deg`;
             const scale = 2.0 + Math.random() * 4.5; // Massive scale (2x to 6.5x) to ensure total screen coverage
-            const duration = 2.0 + Math.random() * 1.0; 
-            const delay = Math.random() * 0.15; 
-            
+            const duration = 2.0 + Math.random() * 1.0;
+            const delay = Math.random() * 0.15;
+
             return (
               <img
                 key={i}
@@ -140,7 +140,7 @@ function App() {
         <div style={{ position: 'relative', zIndex: 10, animation: 'fade-in-up 1s ease-out' }}>
           {/* Main content wrapper */}
           <div style={{ paddingTop: '2rem', position: 'relative', overflowX: 'clip' }}>
-            
+
             {/* Decorative Flowers */}
             <img src={flower2} alt="" style={{ position: 'absolute', top: '50px', right: '-40px', width: '220px', opacity: 0.85, pointerEvents: 'none', zIndex: -1, transform: 'rotate(15deg)' }} />
             <img src={flower3} alt="" style={{ position: 'absolute', top: '450px', left: '-50px', width: '180px', opacity: 0.85, pointerEvents: 'none', zIndex: -1, transform: 'rotate(-25deg)' }} />
@@ -151,10 +151,10 @@ function App() {
 
             {/* Greeting */}
             <div style={{ textAlign: 'center', marginBottom: '2rem', padding: '0 1.5rem' }}>
-              <div style={{ 
-                background: 'var(--glass-bg)', 
+              <div style={{
+                background: 'var(--glass-bg)',
                 backdropFilter: 'blur(8px)',
-                padding: '2rem 1.5rem', 
+                padding: '2rem 1.5rem',
                 borderRadius: '16px',
                 border: '1px solid var(--glass-border)',
                 boxShadow: 'var(--glass-shadow)'
@@ -171,16 +171,16 @@ function App() {
             <Couple />
             <EventDetails />
             <RSVP />
-            
+
             {/* Footer */}
-            <footer style={{ 
-              textAlign: 'center', 
-              padding: '2rem 1.5rem 4rem', 
+            <footer style={{
+              textAlign: 'center',
+              padding: '2rem 1.5rem 4rem',
               opacity: 0.8,
               fontSize: '0.85rem'
             }}>
               <p>Made with love by Nathaniel & Eleanor</p>
-              <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>Dibuat oleh Vermilion Web Labs</p>
+              <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>Created By Vermilion Web Labs</p>
             </footer>
           </div>
         </div>

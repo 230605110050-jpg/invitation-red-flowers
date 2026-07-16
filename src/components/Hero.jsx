@@ -42,7 +42,7 @@ const Hero = ({ onOpen }) => {
         
         {/* The Glass Panel */}
         <div className="glass-panel" style={{
-          padding: '3rem 2rem 4rem', // extra padding bottom for the button
+          padding: '2.5rem 5% 3.5rem', // responsive padding
           textAlign: 'center',
           position: 'relative',
           animation: 'fade-in-up 1s ease-out',
@@ -68,7 +68,7 @@ const Hero = ({ onOpen }) => {
           </div>
 
           <h1 style={{ 
-            fontSize: '2rem', 
+            fontSize: 'clamp(1.5rem, 8vw, 2.2rem)', 
             lineHeight: '1.2', 
             margin: '0', 
             color: 'var(--primary-color)',
@@ -77,9 +77,9 @@ const Hero = ({ onOpen }) => {
           }}>
             Nathaniel
           </h1>
-          <span style={{ fontSize: '1.2rem', fontFamily: 'var(--font-heading)', margin: '0.5rem 0', color: 'var(--primary-color)' }}>&</span>
+          <span style={{ fontSize: 'clamp(1rem, 5vw, 1.2rem)', fontFamily: 'var(--font-heading)', margin: '0.5rem 0', color: 'var(--primary-color)' }}>&</span>
           <h1 style={{ 
-            fontSize: '2rem', 
+            fontSize: 'clamp(1.5rem, 8vw, 2.2rem)', 
             lineHeight: '1.2', 
             margin: '0', 
             color: 'var(--primary-color)',
@@ -111,9 +111,10 @@ const Hero = ({ onOpen }) => {
         {/* Decorative Overlapping Flowers */}
         <img src={flower4Kiri} alt="" style={{
           position: 'absolute',
-          top: '-80px',
-          left: '-80px',
-          width: '250px',
+          top: '-15%',
+          left: '-15%',
+          width: '70%',
+          maxWidth: '250px',
           pointerEvents: 'none',
           zIndex: 2,
           animation: 'fade-in-up 1s ease-out 0.2s both'
@@ -121,23 +122,31 @@ const Hero = ({ onOpen }) => {
 
         <img src={flower4Kanan} alt="" style={{
           position: 'absolute',
-          top: '-80px',
-          right: '-80px',
-          width: '250px',
+          top: '-15%',
+          right: '-15%',
+          width: '70%',
+          maxWidth: '250px',
           pointerEvents: 'none',
           zIndex: 2,
           animation: 'fade-in-up 1s ease-out 0.3s both'
         }} />
 
-        <img src={flower2} alt="" style={{
+        {/* Wrapper to handle visual centering of asymmetric flower image */}
+        <div style={{
           position: 'absolute',
-          bottom: '-140px',
-          right: '-15%',
-          width: '500px',
+          bottom: '-25%',
+          left: '50%',
+          transform: 'translateX(-38%)', /* -50% is structural center, -38% pushes it right to align the rose visually */
+          width: '135%',
+          maxWidth: '500px',
           pointerEvents: 'none',
           zIndex: 2,
-          animation: 'fade-in-up 1s ease-out 0.4s both'
-        }} />
+        }}>
+          <img src={flower2} alt="" style={{
+            width: '100%',
+            animation: 'fade-in-up 1s ease-out 0.4s both'
+          }} />
+        </div>
 
         {/* Button placed outside to layer OVER the flowers */}
         <div style={{

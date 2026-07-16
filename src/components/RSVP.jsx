@@ -12,7 +12,7 @@ const RSVP = () => {
   return (
     <div className="section-padding" style={{ paddingBottom: '6rem' }}>
       <div className="glass-panel" style={{ padding: '3rem 1.5rem', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>RSVP & Wishes</h2>
+        <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1rem' }}>RSVP & Wishes</h2>
         <p style={{ fontSize: '0.9rem', marginBottom: '2rem', opacity: 0.8 }}>
           Please confirm your attendance and leave a message for us.
         </p>

@@ -5,7 +5,7 @@ const EventDetails = () => {
   return (
     <div className="section-padding">
       <div className="glass-panel" style={{ padding: '3rem 1.5rem', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>Wedding Events</h2>
+        <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1.5rem' }}>Wedding Events</h2>
 
         {/* Visual Calendar */}
         <div className="animate-fade-in-up" style={{ marginBottom: '3rem' }}>
@@ -51,7 +51,7 @@ const EventDetails = () => {
 
         {/* Ceremony */}
         <div style={{ marginBottom: '3rem' }} className="animate-fade-in-up">
-          <h3 className="script-text" style={{ fontSize: '2.5rem', color: 'var(--primary-dark)', marginBottom: '1rem' }}>
+          <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '1rem' }}>
             Holy Matrimony
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', alignItems: 'center' }}>
@@ -80,7 +80,7 @@ const EventDetails = () => {
 
         {/* Reception */}
         <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <h3 className="script-text" style={{ fontSize: '2.5rem', color: 'var(--primary-dark)', marginBottom: '1rem' }}>
+          <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '1rem' }}>
             Wedding Reception
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', alignItems: 'center' }}>

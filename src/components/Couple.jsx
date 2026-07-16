@@ -4,7 +4,7 @@ const Couple = () => {
   return (
     <div className="section-padding">
       <div className="glass-panel" style={{ padding: '3rem 1.5rem', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>The Happy Couple</h2>
+        <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1.5rem' }}>The Happy Couple</h2>
         <p style={{ fontSize: '1rem', fontStyle: 'italic', marginBottom: '3rem', opacity: 0.8 }}>
           "Two souls with but a single thought, two hearts that beat as one."
         </p>
@@ -28,7 +28,7 @@ const Couple = () => {
                 background: 'url(https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80) center/cover no-repeat'
               }} />
             </div>
-            <h3 className="script-text" style={{ fontSize: '2.5rem', color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>
+            <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>
               Nathaniel
             </h3>
             <p style={{ fontSize: '0.9rem', fontWeight: 500, marginBottom: '0.5rem' }}>Nathaniel Alexander</p>
@@ -37,7 +37,7 @@ const Couple = () => {
             </p>
           </div>
 
-          <div style={{ fontSize: '2.5rem', color: 'var(--primary-color)', fontFamily: 'var(--font-heading)' }}>
+          <div style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-color)', fontFamily: 'var(--font-heading)' }}>
             &
           </div>
 
@@ -59,7 +59,7 @@ const Couple = () => {
                 background: 'url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80) center/cover no-repeat'
               }} />
             </div>
-            <h3 className="script-text" style={{ fontSize: '2.5rem', color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>
+            <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>
               Eleanor
             </h3>
             <p style={{ fontSize: '0.9rem', fontWeight: 500, marginBottom: '0.5rem' }}>Eleanor Victoria</p>

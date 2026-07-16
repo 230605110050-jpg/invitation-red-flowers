@@ -51,12 +51,12 @@ const WishingWell = () => {
           />
           
           {/* Floating Small Flowers */}
-          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '30px', left: '30px', width: '45px', animation: 'float 6s ease-in-out infinite' }} />
-          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '40px', right: '30px', width: '35px', animation: 'float-reverse 7s ease-in-out infinite 0.5s' }} />
-          <img src={redFlower6} alt="" style={{ position: 'absolute', bottom: '40px', left: '20px', width: '40px', animation: 'float-slow 8s ease-in-out infinite 1s' }} />
-          <img src={redFlower6} alt="" style={{ position: 'absolute', bottom: '30px', right: '30px', width: '50px', animation: 'float 6.5s ease-in-out infinite 1.5s' }} />
-          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '55%', right: '5px', width: '35px', animation: 'float-reverse 5.5s ease-in-out infinite 0.8s' }} />
-          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '45%', left: '5px', width: '40px', animation: 'float-slow 7.5s ease-in-out infinite 1.2s' }} />
+          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '20%', left: '15%', width: '45px', animation: 'float 6s ease-in-out infinite', zIndex: 2 }} />
+          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '15%', right: '15%', width: '35px', animation: 'float-reverse 7s ease-in-out infinite 0.5s', zIndex: 2 }} />
+          <img src={redFlower6} alt="" style={{ position: 'absolute', bottom: '15%', left: '25%', width: '40px', animation: 'float-slow 8s ease-in-out infinite 1s', zIndex: 2 }} />
+          <img src={redFlower6} alt="" style={{ position: 'absolute', bottom: '15%', right: '25%', width: '50px', animation: 'float 6.5s ease-in-out infinite 1.5s', zIndex: 2 }} />
+          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '50%', right: '5%', width: '35px', animation: 'float-reverse 5.5s ease-in-out infinite 0.8s', zIndex: 2 }} />
+          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '45%', left: '5%', width: '40px', animation: 'float-slow 7.5s ease-in-out infinite 1.2s', zIndex: 2 }} />
         </div>
 
         <p style={{ marginTop: '2rem', fontSize: '0.85rem', opacity: 0.9, fontStyle: 'italic', color: '#fff', textShadow: '0 2px 5px rgba(0,0,0,0.5)' }}>

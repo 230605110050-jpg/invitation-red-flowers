@@ -51,12 +51,12 @@ const WishingWell = () => {
           />
           
           {/* Floating Small Flowers */}
-          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '-10px', left: '-20px', width: '50px', animation: 'float 6s ease-in-out infinite' }} />
-          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '10px', right: '-20px', width: '40px', animation: 'float-reverse 7s ease-in-out infinite 0.5s' }} />
-          <img src={redFlower6} alt="" style={{ position: 'absolute', bottom: '20px', left: '-30px', width: '45px', animation: 'float-slow 8s ease-in-out infinite 1s' }} />
-          <img src={redFlower6} alt="" style={{ position: 'absolute', bottom: '-10px', right: '-20px', width: '55px', animation: 'float 6.5s ease-in-out infinite 1.5s' }} />
-          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '50%', right: '-40px', width: '35px', animation: 'float-reverse 5.5s ease-in-out infinite 0.8s' }} />
-          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '40%', left: '-40px', width: '40px', animation: 'float-slow 7.5s ease-in-out infinite 1.2s' }} />
+          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '30px', left: '30px', width: '45px', animation: 'float 6s ease-in-out infinite' }} />
+          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '40px', right: '30px', width: '35px', animation: 'float-reverse 7s ease-in-out infinite 0.5s' }} />
+          <img src={redFlower6} alt="" style={{ position: 'absolute', bottom: '40px', left: '20px', width: '40px', animation: 'float-slow 8s ease-in-out infinite 1s' }} />
+          <img src={redFlower6} alt="" style={{ position: 'absolute', bottom: '30px', right: '30px', width: '50px', animation: 'float 6.5s ease-in-out infinite 1.5s' }} />
+          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '55%', right: '5px', width: '35px', animation: 'float-reverse 5.5s ease-in-out infinite 0.8s' }} />
+          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '45%', left: '5px', width: '40px', animation: 'float-slow 7.5s ease-in-out infinite 1.2s' }} />
         </div>
 
         <p style={{ marginTop: '2rem', fontSize: '0.85rem', opacity: 0.9, fontStyle: 'italic', color: '#fff', textShadow: '0 2px 5px rgba(0,0,0,0.5)' }}>

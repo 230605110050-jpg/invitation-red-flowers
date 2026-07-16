@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&family=Great+Vibes&display=swap');
+
+:root {
+  --primary-color: #e6c875;
+  --primary-dark: #d4af37;
+  --secondary-color: #3d0c0c;
+  --accent-color: #9c1f24;
+  --text-dark: rgba(255, 255, 255, 0.85);
+  --text-light: #ffffff;
+  --glass-bg: rgba(15, 0, 0, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-script: 'Great Vibes', cursive;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #0a0202;
+  color: var(--text-dark);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Mobile App Container */
+#root {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  background: #0a0202; /* Base color before background layer */
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(0,0,0,0.1);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.script-text {
+  font-family: var(--font-script);
+  font-weight: normal;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 16px;
+}
+
+.glass-button {
+  background-color: #3d0c0c;
+  color: var(--primary-color);
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.glass-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+}
+
+.glass-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shine 3s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes shine {
+  0% { left: -100%; }
+  20% { left: 200%; }
+  100% { left: 200%; }
+}
+
+@keyframes seal-pulse {
+  0% { transform: scale(1); box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4), inset 0 2px 4px rgba(255,255,255,0.2); }
+  50% { transform: scale(1.05); box-shadow: 0 4px 25px rgba(212, 175, 55, 0.6), inset 0 2px 4px rgba(255,255,255,0.4); }
+  100% { transform: scale(1); box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4), inset 0 2px 4px rgba(255,255,255,0.2); }
+}
+
+@keyframes ambient-fall {
+  0% {
+    transform: translateY(0) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg) translateX(var(--sway, 20px));
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes hero-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+@keyframes music-glow {
+  0% { box-shadow: 0 0 10px rgba(156, 31, 36, 0.3), inset 0 0 10px rgba(156, 31, 36, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(156, 31, 36, 0.9), inset 0 0 15px rgba(156, 31, 36, 0.6); }
+  100% { box-shadow: 0 0 10px rgba(156, 31, 36, 0.3), inset 0 0 10px rgba(156, 31, 36, 0.3); }
+}
+
+.spectrum-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+  height: 18px;
+}
+
+.spectrum-bar {
+  width: 3px;
+  background-color: var(--primary-color);
+  transform-origin: bottom;
+  border-radius: 2px;
+  animation: spectrum-bounce 0.5s ease-in-out infinite alternate;
+}
+
+.spectrum-bar:nth-child(1) { height: 100%; animation-delay: 0.1s; }
+.spectrum-bar:nth-child(2) { height: 60%; animation-delay: 0.3s; }
+.spectrum-bar:nth-child(3) { height: 80%; animation-delay: 0.0s; }
+.spectrum-bar:nth-child(4) { height: 50%; animation-delay: 0.2s; }
+
+@keyframes spectrum-bounce {
+  0% { transform: scaleY(0.2); }
+  100% { transform: scaleY(1); }
+}
+
+@keyframes massive-flower-explode {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(-50% + var(--tx)), calc(-50% + var(--ty))) scale(var(--scale)) rotate(var(--rot));
+    opacity: 0;
+  }
+}
+
+.massive-flower-particle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: massive-flower-explode 2.5s cubic-bezier(0.15, 0.9, 0.25, 1) forwards;
+  z-index: 9999;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Section Spacing */
+.section-padding {
+  padding: 4rem 1.5rem;
+  position: relative;
+  z-index: 10;
+}

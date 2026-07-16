@@ -29,8 +29,8 @@ const WishingWell = () => {
           onClick={() => setIsOpen(!isOpen)}
           style={{ 
             position: 'relative', 
-            width: '220px', 
-            height: '220px', 
+            width: '320px', 
+            height: '320px', 
             margin: '0 auto', 
             cursor: 'pointer',
             transition: 'transform 0.3s ease'

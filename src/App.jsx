@@ -4,6 +4,7 @@ import Background from './components/Background';
 import Hero from './components/Hero';
 import Couple from './components/Couple';
 import EventDetails from './components/EventDetails';
+import WishingWell from './components/WishingWell';
 import RSVP from './components/RSVP';
 import flower1 from './assets/image/red flowers.png';
 import flower2 from './assets/image/red flower 2.png';
@@ -170,6 +171,7 @@ function App() {
 
             <Couple />
             <EventDetails />
+            <WishingWell />
             <RSVP />
 
             {/* Footer */}

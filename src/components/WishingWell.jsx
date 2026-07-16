@@ -15,11 +15,11 @@ const WishingWell = () => {
 
   return (
     <div className="section-padding">
-      <div className="glass-panel" style={{ padding: '3rem 1.5rem', textAlign: 'center', position: 'relative' }}>
-        <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--primary-dark)' }}>
+      <div style={{ padding: '2rem 1.5rem', textAlign: 'center', position: 'relative' }}>
+        <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--primary-color)', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
           Wishing Well
         </h2>
-        <p style={{ fontSize: '0.9rem', marginBottom: '3rem', opacity: 0.8 }}>
+        <p style={{ fontSize: '0.9rem', marginBottom: '3rem', opacity: 0.9, color: '#fff', textShadow: '0 2px 5px rgba(0,0,0,0.5)' }}>
           Your presence would mean the world to us.<br />
           If you wish to give a gift, you may tap the flower below.
         </p>
@@ -45,8 +45,8 @@ const WishingWell = () => {
               width: '100%',
               height: '100%',
               objectFit: 'contain',
-              animation: 'music-glow 3s infinite',
-              filter: 'drop-shadow(0 4px 15px rgba(156, 31, 36, 0.4))'
+              animation: 'float 4s ease-in-out infinite',
+              filter: 'drop-shadow(0 10px 15px rgba(156, 31, 36, 0.6))'
             }} 
           />
           
@@ -59,7 +59,7 @@ const WishingWell = () => {
           <img src={redFlower6} alt="" style={{ position: 'absolute', top: '40%', left: '-40px', width: '40px', animation: 'float 3.8s ease-in-out infinite 1.2s' }} />
         </div>
 
-        <p style={{ marginTop: '2rem', fontSize: '0.85rem', opacity: 0.7, fontStyle: 'italic' }}>
+        <p style={{ marginTop: '2rem', fontSize: '0.85rem', opacity: 0.9, fontStyle: 'italic', color: '#fff', textShadow: '0 2px 5px rgba(0,0,0,0.5)' }}>
           Tap to {isOpen ? 'close' : 'open'}
         </p>
 
@@ -71,10 +71,9 @@ const WishingWell = () => {
           transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
           marginTop: isOpen ? '2rem' : '0'
         }}>
-          <div style={{
-            background: 'rgba(61, 12, 12, 0.1)',
-            border: '1px solid var(--glass-border)',
-            borderRadius: '12px',
+          <div className="glass-panel" style={{
+            maxWidth: '300px',
+            margin: '0 auto',
             padding: '1.5rem',
             textAlign: 'center'
           }}>

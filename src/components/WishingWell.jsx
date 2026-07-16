@@ -38,25 +38,21 @@ const WishingWell = () => {
           className="wishing-well-trigger"
         >
           {/* Main Central Image */}
-          <img 
-            src={redFlowers} 
-            alt="Wedding Gift" 
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'contain',
-              animation: 'float 8s ease-in-out infinite',
-              filter: 'drop-shadow(0 10px 15px rgba(156, 31, 36, 0.6))'
-            }} 
-          />
+          <div style={{ width: '100%', height: '100%', animation: 'float 8s ease-in-out infinite' }}>
+            <img 
+              src={redFlowers} 
+              alt="Wedding Gift" 
+              className="wishing-well-main-flower"
+            />
+          </div>
           
           {/* Floating Small Flowers */}
-          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '20%', left: '15%', width: '45px', animation: 'float 6s ease-in-out infinite', zIndex: 2 }} />
-          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '15%', right: '15%', width: '35px', animation: 'float-reverse 7s ease-in-out infinite 0.5s', zIndex: 2 }} />
-          <img src={redFlower6} alt="" style={{ position: 'absolute', bottom: '15%', left: '25%', width: '40px', animation: 'float-slow 8s ease-in-out infinite 1s', zIndex: 2 }} />
-          <img src={redFlower6} alt="" style={{ position: 'absolute', bottom: '15%', right: '25%', width: '50px', animation: 'float 6.5s ease-in-out infinite 1.5s', zIndex: 2 }} />
-          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '50%', right: '5%', width: '35px', animation: 'float-reverse 5.5s ease-in-out infinite 0.8s', zIndex: 2 }} />
-          <img src={redFlower6} alt="" style={{ position: 'absolute', top: '45%', left: '5%', width: '40px', animation: 'float-slow 7.5s ease-in-out infinite 1.2s', zIndex: 2 }} />
+          <div className="small-flower-wrapper sf-1"><img src={redFlower6} alt="" className="floating-1" /></div>
+          <div className="small-flower-wrapper sf-2"><img src={redFlower6} alt="" className="floating-2" /></div>
+          <div className="small-flower-wrapper sf-3"><img src={redFlower6} alt="" className="floating-3" /></div>
+          <div className="small-flower-wrapper sf-4"><img src={redFlower6} alt="" className="floating-4" /></div>
+          <div className="small-flower-wrapper sf-5"><img src={redFlower6} alt="" className="floating-5" /></div>
+          <div className="small-flower-wrapper sf-6"><img src={redFlower6} alt="" className="floating-6" /></div>
         </div>
 
         <p style={{ marginTop: '2rem', fontSize: '0.85rem', opacity: 0.9, fontStyle: 'italic', color: '#fff', textShadow: '0 2px 5px rgba(0,0,0,0.5)' }}>

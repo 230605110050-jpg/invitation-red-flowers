@@ -181,7 +181,7 @@ function App() {
               opacity: 0.8,
               fontSize: '0.85rem'
             }}>
-              <p>Made with love by Nathaniel & Eleanor</p>
+              <p>Dibuat dengan ❤️ oleh <strong>Vermilion Web Labs</strong></p>
               <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>Created By Vermilion Web Labs</p>
             </footer>
           </div>

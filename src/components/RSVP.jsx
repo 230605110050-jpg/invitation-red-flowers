@@ -12,25 +12,25 @@ const RSVP = () => {
   return (
     <div className="section-padding" style={{ paddingBottom: '6rem' }}>
       <div className="glass-panel" style={{ padding: '3rem 1.5rem', textAlign: 'center' }}>
-        <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1rem' }}>RSVP & Wishes</h2>
+        <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1rem' }}>Konfirmasi Kehadiran & Ucapan</h2>
         <p style={{ fontSize: '0.9rem', marginBottom: '2rem', opacity: 0.8 }}>
-          Please confirm your attendance and leave a message for us.
+          Silakan konfirmasi kehadiran Anda dan tinggalkan pesan untuk kami.
         </p>
 
         {submitted ? (
           <div className="animate-fade-in-up" style={{ padding: '2rem 0' }}>
-            <h3 style={{ fontSize: '1.5rem', color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>Thank You!</h3>
-            <p>Your message has been received.</p>
+            <h3 style={{ fontSize: '1.5rem', color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>Terima Kasih!</h3>
+            <p>Pesan Anda telah kami terima.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', textAlign: 'left' }}>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Name</label>
+              <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Nama</label>
               <input 
                 type="text" 
                 required 
-                placeholder="Enter your full name"
+                placeholder="Masukkan nama lengkap Anda"
                 style={{
                   padding: '12px',
                   borderRadius: '8px',
@@ -45,7 +45,7 @@ const RSVP = () => {
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Attendance</label>
+              <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Kehadiran</label>
               <select 
                 style={{
                   padding: '12px',
@@ -57,13 +57,13 @@ const RSVP = () => {
                   outline: 'none'
                 }}
               >
-                <option value="yes">Yes, I will attend</option>
-                <option value="no">Sorry, I can't come</option>
+                <option value="yes">Ya, saya akan hadir</option>
+                <option value="no">Maaf, saya tidak bisa hadir</option>
               </select>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Number of Guests</label>
+              <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Jumlah Tamu</label>
               <input 
                 type="number" 
                 min="1" max="5" defaultValue="1"
@@ -80,10 +80,10 @@ const RSVP = () => {
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Wishes</label>
+              <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Ucapan</label>
               <textarea 
                 rows="4" 
-                placeholder="Write your wishes here..."
+                placeholder="Berikan ucapan untuk mempelai..."
                 style={{
                   padding: '12px',
                   borderRadius: '8px',
@@ -97,9 +97,9 @@ const RSVP = () => {
               />
             </div>
 
-            <button type="submit" className="glass-button" style={{ marginTop: '1rem', width: '100%' }}>
+            <button type="submit" className="glass-button" style={{ marginTop: '1rem', width: '100%', display: 'flex', justifyContent: 'center', gap: '0.5rem' }}>
               <PiPaperPlaneRightFill />
-              Send
+              Kirim Konfirmasi
             </button>
           </form>
         )}

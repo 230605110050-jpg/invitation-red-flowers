@@ -1,4 +1,6 @@
 import React from 'react';
+import redFlower2 from '../assets/image/red flower 2.png';
+import redFlower6 from '../assets/image/red flower 6.png';
 
 const Couple = () => {
   return (
@@ -12,21 +14,26 @@ const Couple = () => {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
           {/* Groom */}
           <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <div style={{
-              width: '180px',
-              height: '240px',
-              margin: '0 auto 1.5rem',
-              borderRadius: '90px 90px 20px 20px',
-              overflow: 'hidden',
-              border: '4px solid var(--secondary-color)',
-              boxShadow: 'var(--glass-shadow)',
-              background: 'var(--glass-bg)'
-            }}>
-              {/* Placeholder image, can be replaced by real photo */}
+            <div style={{ position: 'relative', width: '180px', margin: '0 auto 1.5rem' }}>
               <div style={{
-                width: '100%', height: '100%', 
-                background: 'url(https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80) center/cover no-repeat'
-              }} />
+                width: '180px',
+                height: '240px',
+                borderRadius: '90px 90px 20px 20px',
+                overflow: 'hidden',
+                border: '4px solid var(--secondary-color)',
+                boxShadow: 'var(--glass-shadow)',
+                background: 'var(--glass-bg)'
+              }}>
+                {/* Placeholder image, can be replaced by real photo */}
+                <div style={{
+                  width: '100%', height: '100%', 
+                  background: 'url(https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80) center/cover no-repeat'
+                }} />
+              </div>
+              
+              {/* Flower Decorations */}
+              <img src={redFlower2} alt="" style={{ position: 'absolute', top: '-25px', left: '-35px', width: '90px', transform: 'rotate(-15deg)', zIndex: 2, filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }} />
+              <img src={redFlower6} alt="" style={{ position: 'absolute', bottom: '-15px', right: '-25px', width: '65px', transform: 'rotate(25deg)', zIndex: 2, filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }} />
             </div>
             <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>
               Nathaniel
@@ -43,21 +50,26 @@ const Couple = () => {
 
           {/* Bride */}
           <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <div style={{
-              width: '180px',
-              height: '240px',
-              margin: '0 auto 1.5rem',
-              borderRadius: '90px 90px 20px 20px',
-              overflow: 'hidden',
-              border: '4px solid var(--secondary-color)',
-              boxShadow: 'var(--glass-shadow)',
-              background: 'var(--glass-bg)'
-            }}>
-              {/* Placeholder image, can be replaced by real photo */}
+            <div style={{ position: 'relative', width: '180px', margin: '0 auto 1.5rem' }}>
               <div style={{
-                width: '100%', height: '100%', 
-                background: 'url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80) center/cover no-repeat'
-              }} />
+                width: '180px',
+                height: '240px',
+                borderRadius: '90px 90px 20px 20px',
+                overflow: 'hidden',
+                border: '4px solid var(--secondary-color)',
+                boxShadow: 'var(--glass-shadow)',
+                background: 'var(--glass-bg)'
+              }}>
+                {/* Placeholder image, can be replaced by real photo */}
+                <div style={{
+                  width: '100%', height: '100%', 
+                  background: 'url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80) center/cover no-repeat'
+                }} />
+              </div>
+
+              {/* Flower Decorations */}
+              <img src={redFlower2} alt="" style={{ position: 'absolute', top: '-25px', right: '-35px', width: '90px', transform: 'rotate(15deg) scaleX(-1)', zIndex: 2, filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }} />
+              <img src={redFlower6} alt="" style={{ position: 'absolute', bottom: '-15px', left: '-25px', width: '65px', transform: 'rotate(-25deg)', zIndex: 2, filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }} />
             </div>
             <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>
               Eleanor

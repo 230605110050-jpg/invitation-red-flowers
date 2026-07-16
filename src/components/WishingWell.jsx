@@ -46,13 +46,30 @@ const WishingWell = () => {
             />
           </div>
           
-          {/* Floating Small Flowers */}
+          {/* Floating Small Flowers (Ambient) */}
           <div className="small-flower-wrapper sf-1"><img src={redFlower6} alt="" className="floating-1" /></div>
           <div className="small-flower-wrapper sf-2"><img src={redFlower6} alt="" className="floating-2" /></div>
           <div className="small-flower-wrapper sf-3"><img src={redFlower6} alt="" className="floating-3" /></div>
           <div className="small-flower-wrapper sf-4"><img src={redFlower6} alt="" className="floating-4" /></div>
           <div className="small-flower-wrapper sf-5"><img src={redFlower6} alt="" className="floating-5" /></div>
           <div className="small-flower-wrapper sf-6"><img src={redFlower6} alt="" className="floating-6" /></div>
+
+          {/* Bursting Fountain Flowers (Triggered on Hover) */}
+          {Array.from({ length: 15 }).map((_, i) => (
+            <img 
+              key={`burst-${i}`} 
+              src={redFlower6} 
+              alt="" 
+              className="burst-flower"
+              style={{
+                '--bx': `${(Math.random() - 0.5) * 350}px`,
+                '--by': `${(Math.random() - 0.5) * 350}px`,
+                '--bs': `${0.6 + Math.random() * 0.8}`,
+                '--br': `${Math.random() * 360}deg`,
+                animationDelay: `${Math.random() * 1.5}s`
+              }}
+            />
+          ))}
         </div>
 
         <p style={{ marginTop: '2rem', fontSize: '0.85rem', opacity: 0.9, fontStyle: 'italic', color: '#fff', textShadow: '0 2px 5px rgba(0,0,0,0.5)' }}>

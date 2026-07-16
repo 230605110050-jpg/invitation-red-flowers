@@ -275,3 +275,27 @@ h1, h2, h3, h4, h5, h6 {
 .floating-4 { width: 50px; animation: float 6.5s ease-in-out infinite 1.5s; }
 .floating-5 { width: 35px; animation: float-reverse 5.5s ease-in-out infinite 0.8s; }
 .floating-6 { width: 40px; animation: float-slow 7.5s ease-in-out infinite 1.2s; }
+
+/* BURST EFFECT ON HOVER */
+@keyframes flower-burst {
+  0% { transform: translate(0, 0) scale(0.2) rotate(0deg); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translate(var(--bx), var(--by)) scale(var(--bs)) rotate(var(--br)); opacity: 0; }
+}
+
+.burst-flower {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  margin-top: -20px;
+  margin-left: -20px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.wishing-well-trigger:hover .burst-flower, 
+.wishing-well-trigger:active .burst-flower {
+  animation: flower-burst 1.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}

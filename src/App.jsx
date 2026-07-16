@@ -180,7 +180,7 @@ function App() {
               fontSize: '0.85rem'
             }}>
               <p>Made with love by Nathaniel & Eleanor</p>
-              <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>Design inspired by Glass Garden Green</p>
+              <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>Dibuat oleh Vermilion Web Labs</p>
             </footer>
           </div>
         </div>

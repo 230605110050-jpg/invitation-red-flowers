@@ -131,19 +131,20 @@ const Hero = ({ onOpen }) => {
           animation: 'fade-in-up 1s ease-out 0.3s both'
         }} />
 
-        {/* Wrapper to handle visual centering of asymmetric flower image */}
+        {/* Flexbox wrapper to perfectly center the flower on all screens */}
         <div style={{
           position: 'absolute',
           bottom: '-25%',
-          left: '50%',
-          transform: 'translateX(-38%)', /* -50% is structural center, -38% pushes it right to align the rose visually */
-          width: '135%',
-          maxWidth: '500px',
+          left: '0',
+          right: '0',
+          display: 'flex',
+          justifyContent: 'center',
           pointerEvents: 'none',
           zIndex: 2,
         }}>
           <img src={flower2} alt="" style={{
-            width: '100%',
+            width: '135%',
+            maxWidth: '500px',
             animation: 'fade-in-up 1s ease-out 0.4s both'
           }} />
         </div>

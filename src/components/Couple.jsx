@@ -1,4 +1,5 @@
 import React from 'react';
+import redFlower2 from '../assets/image/red flower 2.png';
 
 const Couple = () => {
   return (
@@ -28,6 +29,9 @@ const Couple = () => {
                   background: 'url(https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80) center/cover no-repeat'
                 }} />
               </div>
+              
+              {/* Flower Decoration */}
+              <img src={redFlower2} alt="" style={{ position: 'absolute', bottom: '-35px', left: '50%', transform: 'translateX(-50%)', width: '130px', zIndex: 2, filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }} />
             </div>
             <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>
               Nathaniel
@@ -60,6 +64,9 @@ const Couple = () => {
                   background: 'url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80) center/cover no-repeat'
                 }} />
               </div>
+              
+              {/* Flower Decoration */}
+              <img src={redFlower2} alt="" style={{ position: 'absolute', bottom: '-35px', left: '50%', transform: 'translateX(-50%)', width: '130px', zIndex: 2, filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }} />
             </div>
             <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>
               Eleanor

@@ -1,5 +1,6 @@
 import React from 'react';
 import { PiLeafFill, PiFlowerTulipFill } from 'react-icons/pi';
+import bgImage from '../assets/image/background.png';
 
 const Background = () => {
   // Generate random particles
@@ -23,7 +24,8 @@ const Background = () => {
       height: '100%',
       zIndex: 0,
       pointerEvents: 'none',
-      background: 'radial-gradient(circle at top left, #2b0b0d 0%, #0a0202 40%), radial-gradient(circle at bottom right, #1a0505 0%, #050101 60%)',
+      background: `url(${bgImage}) center/cover no-repeat fixed`,
+      backgroundColor: '#0a0202',
       overflow: 'hidden'
     }}>
       {particles.map((p) => (

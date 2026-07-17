@@ -142,14 +142,24 @@ function App() {
           {/* Main content wrapper */}
           <div style={{ paddingTop: '2rem', position: 'relative', overflowX: 'clip' }}>
 
-            {/* Decorative Flowers (Elegant Alternating Pattern) */}
+            {/* Dense, Animated & Luxurious Decorative Flowers */}
             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden', pointerEvents: 'none', zIndex: -1 }}>
-              <img src={flower2} alt="" style={{ position: 'absolute', top: '2%', right: '-40px', width: '220px', opacity: 0.7, transform: 'rotate(15deg)' }} />
-              <img src={flower3} alt="" style={{ position: 'absolute', top: '20%', left: '-50px', width: '200px', opacity: 0.7, transform: 'rotate(-25deg)' }} />
-              <img src={flower1} alt="" style={{ position: 'absolute', top: '40%', right: '-40px', width: '230px', opacity: 0.7, transform: 'rotate(180deg)' }} />
-              <img src={flower2} alt="" style={{ position: 'absolute', top: '60%', left: '-40px', width: '220px', opacity: 0.7, transform: 'rotate(110deg) scaleX(-1)' }} />
-              <img src={flower3} alt="" style={{ position: 'absolute', top: '80%', right: '-50px', width: '200px', opacity: 0.7, transform: 'rotate(45deg)' }} />
-              <img src={flower1} alt="" style={{ position: 'absolute', bottom: '1%', left: '-30px', width: '180px', opacity: 0.6, transform: 'rotate(-45deg)' }} />
+              <img src={flower2} alt="" style={{ position: 'absolute', top: '1%', right: '-100px', width: '450px', opacity: 0.8, transform: 'rotate(15deg)', animation: 'float-slow 10s ease-in-out infinite' }} />
+              <img src={flower6} alt="" style={{ position: 'absolute', top: '5%', left: '-80px', width: '300px', opacity: 0.5, filter: 'blur(4px)', transform: 'rotate(-45deg)', animation: 'float-reverse 12s ease-in-out infinite' }} />
+              
+              <img src={flower3} alt="" style={{ position: 'absolute', top: '15%', left: '-120px', width: '400px', opacity: 0.75, transform: 'rotate(-25deg)', animation: 'float 9s ease-in-out infinite' }} />
+              <img src={flower1} alt="" style={{ position: 'absolute', top: '25%', right: '-150px', width: '350px', opacity: 0.4, filter: 'blur(5px)', transform: 'rotate(120deg)', animation: 'float-slow 14s ease-in-out infinite' }} />
+              
+              <img src={flower1} alt="" style={{ position: 'absolute', top: '40%', right: '-100px', width: '500px', opacity: 0.8, transform: 'rotate(180deg)', animation: 'float-reverse 11s ease-in-out infinite' }} />
+              <img src={flower6} alt="" style={{ position: 'absolute', top: '45%', left: '10px', width: '150px', opacity: 0.9, transform: 'rotate(60deg)', animation: 'float 7s ease-in-out infinite' }} />
+              
+              <img src={flower2} alt="" style={{ position: 'absolute', top: '65%', left: '-150px', width: '450px', opacity: 0.75, transform: 'rotate(110deg) scaleX(-1)', animation: 'float-slow 13s ease-in-out infinite' }} />
+              <img src={flower3} alt="" style={{ position: 'absolute', top: '60%', right: '-100px', width: '300px', opacity: 0.5, filter: 'blur(3px)', transform: 'rotate(20deg)', animation: 'float 8s ease-in-out infinite' }} />
+              
+              <img src={flower3} alt="" style={{ position: 'absolute', top: '85%', right: '-120px', width: '400px', opacity: 0.8, transform: 'rotate(45deg)', animation: 'float-reverse 10s ease-in-out infinite' }} />
+              <img src={flower1} alt="" style={{ position: 'absolute', top: '90%', left: '-100px', width: '350px', opacity: 0.7, transform: 'rotate(-45deg)', animation: 'float-slow 9s ease-in-out infinite' }} />
+              
+              <img src={flower2} alt="" style={{ position: 'absolute', bottom: '0', left: '30%', width: '300px', opacity: 0.3, filter: 'blur(6px)', transform: 'rotate(90deg)', animation: 'float 15s ease-in-out infinite' }} />
             </div>
 
             {/* Greeting */}

@@ -1,6 +1,4 @@
 import React from 'react';
-import redFlower2 from '../assets/image/red flower 2.png';
-import redFlower6 from '../assets/image/red flower 6.png';
 
 const Couple = () => {
   return (
@@ -30,10 +28,6 @@ const Couple = () => {
                   background: 'url(https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80) center/cover no-repeat'
                 }} />
               </div>
-              
-              {/* Flower Decorations */}
-              <img src={redFlower2} alt="" style={{ position: 'absolute', top: '-25px', left: '-35px', width: '90px', transform: 'rotate(-15deg)', zIndex: 2, filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }} />
-              <img src={redFlower6} alt="" style={{ position: 'absolute', bottom: '-15px', right: '-25px', width: '65px', transform: 'rotate(25deg)', zIndex: 2, filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }} />
             </div>
             <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>
               Nathaniel
@@ -66,10 +60,6 @@ const Couple = () => {
                   background: 'url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80) center/cover no-repeat'
                 }} />
               </div>
-
-              {/* Flower Decorations */}
-              <img src={redFlower2} alt="" style={{ position: 'absolute', top: '-25px', right: '-35px', width: '90px', transform: 'rotate(15deg) scaleX(-1)', zIndex: 2, filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }} />
-              <img src={redFlower6} alt="" style={{ position: 'absolute', bottom: '-15px', left: '-25px', width: '65px', transform: 'rotate(-25deg)', zIndex: 2, filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }} />
             </div>
             <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>
               Eleanor

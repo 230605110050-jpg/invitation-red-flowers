@@ -23,7 +23,7 @@ const Background = () => {
       height: '100%',
       zIndex: 0,
       pointerEvents: 'none',
-      background: 'radial-gradient(circle at top right, #1a0505, #050101)',
+      background: 'radial-gradient(circle at top left, #2b0b0d 0%, #0a0202 40%), radial-gradient(circle at bottom right, #1a0505 0%, #050101 60%)',
       overflow: 'hidden'
     }}>
       {particles.map((p) => (

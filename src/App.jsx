@@ -142,13 +142,15 @@ function App() {
           {/* Main content wrapper */}
           <div style={{ paddingTop: '2rem', position: 'relative', overflowX: 'clip' }}>
 
-            {/* Decorative Flowers */}
-            <img src={flower2} alt="" style={{ position: 'absolute', top: '50px', right: '-40px', width: '220px', opacity: 0.85, pointerEvents: 'none', zIndex: -1, transform: 'rotate(15deg)' }} />
-            <img src={flower3} alt="" style={{ position: 'absolute', top: '450px', left: '-50px', width: '180px', opacity: 0.85, pointerEvents: 'none', zIndex: -1, transform: 'rotate(-25deg)' }} />
-            <img src={flower1} alt="" style={{ position: 'absolute', top: '900px', right: '-30px', width: '200px', opacity: 0.85, pointerEvents: 'none', zIndex: -1, transform: 'rotate(180deg)' }} />
-            <img src={flower2} alt="" style={{ position: 'absolute', top: '1350px', left: '-40px', width: '220px', opacity: 0.85, pointerEvents: 'none', zIndex: -1, transform: 'rotate(110deg) scaleX(-1)' }} />
-            <img src={flower3} alt="" style={{ position: 'absolute', bottom: '250px', right: '-50px', width: '200px', opacity: 0.85, pointerEvents: 'none', zIndex: -1, transform: 'rotate(45deg)' }} />
-            <img src={flower1} alt="" style={{ position: 'absolute', bottom: '50px', left: '-30px', width: '150px', opacity: 0.6, pointerEvents: 'none', zIndex: -1, transform: 'rotate(-45deg)' }} />
+            {/* Decorative Flowers (Elegant Alternating Pattern) */}
+            <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden', pointerEvents: 'none', zIndex: -1 }}>
+              <img src={flower2} alt="" style={{ position: 'absolute', top: '2%', right: '-40px', width: '220px', opacity: 0.7, transform: 'rotate(15deg)' }} />
+              <img src={flower3} alt="" style={{ position: 'absolute', top: '20%', left: '-50px', width: '200px', opacity: 0.7, transform: 'rotate(-25deg)' }} />
+              <img src={flower1} alt="" style={{ position: 'absolute', top: '40%', right: '-40px', width: '230px', opacity: 0.7, transform: 'rotate(180deg)' }} />
+              <img src={flower2} alt="" style={{ position: 'absolute', top: '60%', left: '-40px', width: '220px', opacity: 0.7, transform: 'rotate(110deg) scaleX(-1)' }} />
+              <img src={flower3} alt="" style={{ position: 'absolute', top: '80%', right: '-50px', width: '200px', opacity: 0.7, transform: 'rotate(45deg)' }} />
+              <img src={flower1} alt="" style={{ position: 'absolute', bottom: '1%', left: '-30px', width: '180px', opacity: 0.6, transform: 'rotate(-45deg)' }} />
+            </div>
 
             {/* Greeting */}
             <div style={{ textAlign: 'center', marginBottom: '2rem', padding: '0 1.5rem' }}>

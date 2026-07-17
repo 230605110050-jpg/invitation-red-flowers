@@ -5,7 +5,7 @@ const EventDetails = () => {
   return (
     <div className="section-padding">
       <div className="glass-panel" style={{ padding: '3rem 1.5rem', textAlign: 'center' }}>
-        <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1.5rem' }}>Rangkaian Acara</h2>
+        <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1.5rem' }}>Wedding Events</h2>
 
         {/* Visual Calendar */}
         <div className="animate-fade-in-up" style={{ marginBottom: '3rem' }}>
@@ -52,12 +52,12 @@ const EventDetails = () => {
         {/* Ceremony */}
         <div style={{ marginBottom: '3rem' }} className="animate-fade-in-up">
           <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '1rem' }}>
-            Pemberkatan Nikah
+            Holy Matrimony
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <PiCalendarBlankFill color="var(--primary-color)" />
-              <span style={{ fontWeight: 500 }}>Sabtu, 28 November 2026</span>
+              <span style={{ fontWeight: 500 }}>Saturday, November 28, 2026</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <PiClockFill color="var(--primary-color)" />
@@ -72,7 +72,7 @@ const EventDetails = () => {
             </div>
           </div>
           <a href="https://maps.google.com/?q=Jakarta+Cathedral" target="_blank" rel="noreferrer" className="glass-button" style={{ display: 'inline-block', marginTop: '1.5rem', fontSize: '0.9rem', padding: '8px 20px', textDecoration: 'none' }}>
-            Buka di Google Maps
+            Open in Google Maps
           </a>
           <div style={{ marginTop: '1.5rem', width: '100%', height: '250px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', boxShadow: '0 4px 15px rgba(0,0,0,0.5)' }}>
             <iframe 
@@ -92,12 +92,12 @@ const EventDetails = () => {
         {/* Reception */}
         <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '1rem' }}>
-            Resepsi Pernikahan
+            Wedding Reception
           </h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', alignItems: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <PiCalendarBlankFill color="var(--primary-color)" />
-              <span style={{ fontWeight: 500 }}>Sabtu, 28 November 2026</span>
+              <span style={{ fontWeight: 500 }}>Saturday, November 28, 2026</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <PiClockFill color="var(--primary-color)" />
@@ -112,7 +112,7 @@ const EventDetails = () => {
             </div>
           </div>
           <a href="https://maps.google.com/?q=Jakarta" target="_blank" rel="noreferrer" className="glass-button" style={{ display: 'inline-block', marginTop: '1.5rem', fontSize: '0.9rem', padding: '8px 20px', textDecoration: 'none' }}>
-            Buka di Google Maps
+            Open in Google Maps
           </a>
           <div style={{ marginTop: '1.5rem', width: '100%', height: '250px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', boxShadow: '0 4px 15px rgba(0,0,0,0.5)' }}>
             <iframe 

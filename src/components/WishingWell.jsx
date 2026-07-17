@@ -17,11 +17,11 @@ const WishingWell = () => {
     <div className="section-padding">
       <div style={{ padding: '2rem 1.5rem', textAlign: 'center', position: 'relative' }}>
         <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--primary-color)', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-          Tanda Kasih
+          Wishing Well
         </h2>
         <p style={{ fontSize: '0.9rem', marginBottom: '3rem', opacity: 0.9, color: '#fff', textShadow: '0 2px 5px rgba(0,0,0,0.5)' }}>
-          Doa restu Anda adalah karunia yang sangat berarti.<br />
-          Namun jika Anda ingin memberikan tanda kasih, Anda dapat menekan bunga di bawah ini.
+          Your presence would mean the world to us.<br />
+          If you wish to give a gift, you may tap the flower below.
         </p>
 
         {/* Central Element Container */}
@@ -56,7 +56,7 @@ const WishingWell = () => {
         </div>
 
         <p style={{ marginTop: '2rem', fontSize: '0.85rem', opacity: 0.9, fontStyle: 'italic', color: '#fff', textShadow: '0 2px 5px rgba(0,0,0,0.5)' }}>
-          Sentuh untuk {isOpen ? 'menutup' : 'membuka'}
+          Tap to {isOpen ? 'close' : 'open'}
         </p>
 
         {/* Revealed Bank Details */}

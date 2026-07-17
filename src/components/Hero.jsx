@@ -96,11 +96,11 @@ const Hero = ({ onOpen }) => {
           </div>
 
           <p style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>
-            28 November 2026
+            November 28, 2026
           </p>
 
           <p style={{ fontSize: '1rem', marginBottom: '2.5rem', opacity: 0.8 }}>
-            Anda Diundang
+            You're Invited
           </p>
 
           {/* Placeholder to preserve panel height */}
@@ -167,7 +167,7 @@ const Hero = ({ onOpen }) => {
             fontSize: '1rem',
             borderRadius: '30px'
           }}>
-            Buka Undangan
+            Open Invitation
           </button>
         </div>
 

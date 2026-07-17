@@ -181,8 +181,11 @@ function App() {
               opacity: 0.8,
               fontSize: '0.85rem'
             }}>
-              <p>Dibuat dengan ❤️ oleh <strong>Vermilion Web Labs</strong></p>
-              <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>Created By Vermilion Web Labs</p>
+              <p>Made with love by Nathaniel & Eleanor</p>
+              <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>
+                © 2026 Vermilion Web Labs<br />
+                All Rights Reserved.
+              </p>
             </footer>
           </div>
         </div>

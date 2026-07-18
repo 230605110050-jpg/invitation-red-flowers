@@ -49,7 +49,7 @@ const RSVP = () => {
 
     if (error) {
       console.error('Error inserting comment:', error);
-      alert('Gagal mengirim pesan, silakan coba lagi.');
+      alert('Gagal mengirim pesan. Error: ' + error.message);
     } else {
       setSubmitted(true);
       setFormData({ name: '', attendance: 'yes', wishes: '' });
@@ -72,28 +72,28 @@ const RSVP = () => {
   return (
     <div className="section-padding" style={{ paddingBottom: '6rem' }}>
       <div className="glass-panel" style={{ padding: '3rem 1.5rem', textAlign: 'center' }}>
-        <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1rem' }}>RSVP & Wishes</h2>
+        <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1rem' }}>Buku Tamu & RSVP</h2>
         <p style={{ fontSize: '0.9rem', marginBottom: '2rem', opacity: 0.8 }}>
-          Please confirm your attendance and leave a message for us.
+          Kehadiran Anda akan menjadi doa terbaik bagi kami. Mohon konfirmasi kehadiran Anda melalui form berikut.
         </p>
 
         {submitted ? (
           <div className="animate-fade-in-up" style={{ padding: '2rem 0', background: 'rgba(0,0,0,0.3)', borderRadius: '12px', marginBottom: '2rem' }}>
-            <h3 style={{ fontSize: '1.5rem', color: 'var(--primary-color)', marginBottom: '0.5rem' }}>Thank You!</h3>
-            <p style={{ opacity: 0.9 }}>Your message has been posted.</p>
+            <h3 style={{ fontSize: '1.5rem', color: 'var(--primary-color)', marginBottom: '0.5rem' }}>Terima Kasih!</h3>
+            <p style={{ opacity: 0.9 }}>Pesan Anda telah berhasil dikirim.</p>
           </div>
         ) : (
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', textAlign: 'left', marginBottom: '3rem' }}>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Name</label>
+              <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Nama Lengkap</label>
               <input 
                 type="text" 
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 required 
-                placeholder="Enter your full name"
+                placeholder="Masukkan nama lengkap Anda"
                 style={{
                   padding: '12px',
                   borderRadius: '8px',
@@ -108,7 +108,7 @@ const RSVP = () => {
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Attendance</label>
+              <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Konfirmasi Kehadiran</label>
               <select 
                 name="attendance"
                 value={formData.attendance}
@@ -123,20 +123,20 @@ const RSVP = () => {
                   outline: 'none'
                 }}
               >
-                <option value="yes">Yes, I will attend</option>
-                <option value="no">Sorry, I can't come</option>
+                <option value="yes">Ya, Saya akan hadir</option>
+                <option value="no">Maaf, Saya tidak bisa hadir</option>
               </select>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Wishes</label>
+              <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Doa & Ucapan</label>
               <textarea 
                 name="wishes"
                 value={formData.wishes}
                 onChange={handleChange}
                 required
                 rows="4" 
-                placeholder="Write your wishes here..."
+                placeholder="Tuliskan doa & ucapan Anda di sini..."
                 style={{
                   padding: '12px',
                   borderRadius: '8px',
@@ -152,7 +152,7 @@ const RSVP = () => {
 
             <button type="submit" disabled={isLoading} className="glass-button" style={{ marginTop: '1rem', width: '100%', opacity: isLoading ? 0.7 : 1 }}>
               <PiPaperPlaneRightFill />
-              {isLoading ? 'Sending...' : 'Send'}
+              {isLoading ? 'Mengirim...' : 'Kirim Pesan'}
             </button>
           </form>
         )}
@@ -160,7 +160,7 @@ const RSVP = () => {
         {/* Comment Section */}
         <div style={{ textAlign: 'left' }}>
           <h3 style={{ fontSize: '1.2rem', marginBottom: '1.5rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
-            Wishes ({comments.length})
+            Ucapan & Doa ({comments.length})
           </h3>
           
           <div style={{ 

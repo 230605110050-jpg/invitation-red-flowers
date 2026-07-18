@@ -51,21 +51,23 @@ const Hero = ({ onOpen }) => {
           alignItems: 'center'
         }}>
           
-          {/* Heart Badge */}
+          <p style={{ fontSize: '0.9rem', marginBottom: '0.5rem', opacity: 0.8 }}>Kepada Yth. Bapak/Ibu/Saudara/i:</p>
           <div style={{
-            width: '40px',
-            height: '40px',
-            backgroundColor: 'var(--secondary-color)',
-            borderRadius: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            fontSize: '1.2rem',
+            fontWeight: '600',
+            fontFamily: 'var(--font-heading)',
             color: 'var(--primary-color)',
-            marginBottom: '1.5rem',
-            boxShadow: '0 4px 10px rgba(0,0,0,0.3)'
+            marginBottom: '2rem',
+            padding: '10px 20px',
+            borderBottom: '1px solid var(--primary-color)',
+            display: 'inline-block'
           }}>
-            <PiHeartFill size={20} />
+            Tamu Undangan
           </div>
+
+          <h2 style={{ fontSize: '1rem', letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '1rem', opacity: 0.9 }}>
+            Pernikahan Dari
+          </h2>
 
           <h1 style={{ 
             fontSize: 'clamp(1.5rem, 8vw, 2.2rem)', 
@@ -97,10 +99,6 @@ const Hero = ({ onOpen }) => {
 
           <p style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>
             November 28, 2026
-          </p>
-
-          <p style={{ fontSize: '1rem', marginBottom: '2.5rem', opacity: 0.8 }}>
-            You're Invited
           </p>
 
           {/* Placeholder to preserve panel height */}

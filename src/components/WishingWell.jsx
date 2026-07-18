@@ -17,11 +17,11 @@ const WishingWell = () => {
     <div className="section-padding">
       <div style={{ padding: '2rem 1.5rem', textAlign: 'center', position: 'relative' }}>
         <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '2px', color: 'var(--primary-color)', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-          Wishing Well
+          Wedding Gift
         </h2>
         <p style={{ fontSize: '0.9rem', marginBottom: '3rem', opacity: 0.9, color: '#fff', textShadow: '0 2px 5px rgba(0,0,0,0.5)' }}>
-          Your presence would mean the world to us.<br />
-          If you wish to give a gift, you may tap the flower below.
+          Doa restu Anda merupakan karunia yang sangat berarti bagi kami.<br />
+          Dan jika Anda ingin memberikan tanda kasih untuk kami, dapat melalui fitur di bawah ini:
         </p>
 
         {/* Central Element Container */}
@@ -56,28 +56,66 @@ const WishingWell = () => {
         </div>
 
         <p style={{ marginTop: '2rem', fontSize: '0.85rem', opacity: 0.9, fontStyle: 'italic', color: '#fff', textShadow: '0 2px 5px rgba(0,0,0,0.5)' }}>
-          Tap to {isOpen ? 'close' : 'open'}
+          Ketuk untuk {isOpen ? 'menutup' : 'membuka'} amplop digital
         </p>
 
-        {/* Revealed Bank Details */}
+        {/* Modal Overlay for Bank Details */}
         <div style={{
-          maxHeight: isOpen ? '500px' : '0',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.85)',
+          backdropFilter: 'blur(5px)',
+          zIndex: 9999,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
           opacity: isOpen ? 1 : 0,
-          overflow: 'hidden',
-          transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-          marginTop: isOpen ? '2rem' : '0'
+          pointerEvents: isOpen ? 'auto' : 'none',
+          transition: 'opacity 0.3s ease',
+          padding: '2rem'
         }}>
           <div className="glass-panel" style={{
-            maxWidth: '300px',
-            margin: '0 auto',
-            padding: '1.5rem',
-            textAlign: 'center'
+            position: 'relative',
+            width: '100%',
+            maxWidth: '350px',
+            padding: '2.5rem 1.5rem',
+            textAlign: 'center',
+            transform: isOpen ? 'scale(1)' : 'scale(0.9)',
+            transition: 'transform 0.3s ease'
           }}>
-            <h3 style={{ fontSize: '1.1rem', color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>Bank BCA</h3>
-            <p style={{ fontSize: '1.2rem', letterSpacing: '2px', fontFamily: 'monospace', marginBottom: '0.5rem' }}>
+            {/* Close Button */}
+            <button 
+              onClick={() => setIsOpen(false)}
+              style={{
+                position: 'absolute',
+                top: '15px',
+                right: '15px',
+                background: 'none',
+                border: 'none',
+                color: 'var(--text-light)',
+                fontSize: '1.5rem',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '5px'
+              }}
+            >
+              ×
+            </button>
+
+            <h3 style={{ fontSize: '1.2rem', color: 'var(--primary-dark)', marginBottom: '1rem', borderBottom: '1px solid var(--glass-border)', paddingBottom: '1rem' }}>
+              Kirim Hadiah
+            </h3>
+            
+            <p style={{ fontSize: '1rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>Bank BCA</p>
+            <p style={{ fontSize: '1.5rem', letterSpacing: '3px', fontFamily: 'monospace', marginBottom: '0.5rem', color: 'var(--primary-color)' }}>
               1234567890
             </p>
-            <p style={{ fontSize: '0.9rem', marginBottom: '1rem' }}>a.n Nathaniel Alexander</p>
+            <p style={{ fontSize: '0.9rem', marginBottom: '2rem', opacity: 0.8 }}>a.n Nathaniel Alexander</p>
             
             <button 
               onClick={handleCopy}
@@ -88,15 +126,15 @@ const WishingWell = () => {
                 justifyContent: 'center',
                 gap: '0.5rem',
                 margin: '0 auto',
-                padding: '8px 20px',
-                fontSize: '0.9rem',
+                padding: '10px 25px',
+                fontSize: '1rem',
                 backgroundColor: copied ? '#4ade80' : 'var(--secondary-color)',
                 color: copied ? '#000' : 'var(--primary-color)',
                 border: copied ? 'none' : '1px solid var(--primary-color)'
               }}
             >
               <PiCopySimpleFill />
-              {copied ? 'Tersalin!' : 'Copy Rekening'}
+              {copied ? 'Tersalin!' : 'Salin Nomor Rekening'}
             </button>
           </div>
         </div>

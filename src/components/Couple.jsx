@@ -5,9 +5,9 @@ const Couple = () => {
   return (
     <div className="section-padding">
       <div className="glass-panel" style={{ padding: '3rem 1.5rem', textAlign: 'center' }}>
-        <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1.5rem' }}>The Happy Couple</h2>
+        <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1.5rem' }}>Sang Mempelai</h2>
         <p style={{ fontSize: '1rem', fontStyle: 'italic', marginBottom: '3rem', opacity: 0.8 }}>
-          "Two souls with but a single thought, two hearts that beat as one."
+          "Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan."
         </p>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
@@ -38,7 +38,7 @@ const Couple = () => {
             </h3>
             <p style={{ fontSize: '0.9rem', fontWeight: 500, marginBottom: '0.5rem' }}>Nathaniel Alexander</p>
             <p style={{ fontSize: '0.85rem', opacity: 0.7 }}>
-              Son of Mr. Alexander & Mrs. Sarah
+              Putra dari Bpk. Alexander & Ibu Sarah
             </p>
           </div>
 
@@ -73,7 +73,7 @@ const Couple = () => {
             </h3>
             <p style={{ fontSize: '0.9rem', fontWeight: 500, marginBottom: '0.5rem' }}>Eleanor Victoria</p>
             <p style={{ fontSize: '0.85rem', opacity: 0.7 }}>
-              Daughter of Mr. William & Mrs. Elizabeth
+              Putri dari Bpk. William & Ibu Elizabeth
             </p>
           </div>
         </div>

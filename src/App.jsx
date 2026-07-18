@@ -6,6 +6,7 @@ import Couple from './components/Couple';
 import EventDetails from './components/EventDetails';
 import WishingWell from './components/WishingWell';
 import RSVP from './components/RSVP';
+import Schedule from './components/Schedule';
 import flower1 from './assets/image/red flowers.png';
 import flower2 from './assets/image/red flower 2.png';
 import flower3 from './assets/image/red flower 3.png';
@@ -139,8 +140,32 @@ function App() {
         <Hero onOpen={handleOpenInvitation} />
       ) : (
         <div style={{ position: 'relative', zIndex: 10, animation: 'fade-in-up 1s ease-out' }}>
+          {/* Header Decoration */}
+          <header style={{
+            position: 'relative',
+            width: '100%',
+            height: '240px',
+            overflow: 'hidden'
+          }}>
+            <img 
+              src={flower2} 
+              alt="" 
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: '50%',
+                transform: 'translate(-50%, -50%) rotate(180deg)',
+                width: '850px',
+                maxWidth: 'none',
+                opacity: 0.85,
+                pointerEvents: 'none',
+                zIndex: 0
+              }} 
+            />
+          </header>
+
           {/* Main content wrapper */}
-          <div style={{ paddingTop: '2rem', position: 'relative', overflowX: 'clip' }}>
+          <div style={{ position: 'relative', overflowX: 'clip', marginTop: '-2rem' }}>
 
             {/* Dense, Animated & Luxurious Decorative Flowers */}
             <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden', pointerEvents: 'none', zIndex: -1 }}>
@@ -164,40 +189,64 @@ function App() {
 
             {/* Greeting */}
             <div style={{ textAlign: 'center', marginBottom: '2rem', padding: '0 1.5rem' }}>
-              <div style={{
-                background: 'var(--glass-bg)',
-                backdropFilter: 'blur(8px)',
+              <div className="glass-panel" style={{
                 padding: '2rem 1.5rem',
-                borderRadius: '16px',
-                border: '1px solid var(--glass-border)',
-                boxShadow: 'var(--glass-shadow)'
               }}>
                 <h3 className="script-text" style={{ fontSize: '2rem', color: 'var(--primary-dark)', marginBottom: '1rem' }}>
-                  Welcome to Our Wedding
+                  Bismillahirrahmanirrahim
                 </h3>
+                <p style={{ fontSize: '1rem', fontWeight: 500, marginBottom: '1.5rem', color: 'var(--primary-color)' }}>
+                  Assalamu'alaikum Warahmatullahi Wabarakatuh
+                </p>
+                <p style={{ fontSize: '0.85rem', lineHeight: '1.6', fontStyle: 'italic', opacity: 0.8, marginBottom: '1.5rem' }}>
+                  "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
+                  <br /><br />
+                  <strong>(QS. Ar-Rum: 21)</strong>
+                </p>
                 <p style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-                  With the grace and blessing of God, we cordially invite you to our wedding celebration.
+                  Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan acara pernikahan putra-putri kami:
                 </p>
               </div>
             </div>
 
             <Couple />
             <EventDetails />
+            <Schedule />
             <WishingWell />
             <RSVP />
 
             {/* Footer */}
             <footer style={{
+              position: 'relative',
               textAlign: 'center',
-              padding: '2rem 1.5rem 4rem',
-              opacity: 0.8,
-              fontSize: '0.85rem'
+              padding: '2rem 1.5rem 240px',
+              fontSize: '0.85rem',
+              overflow: 'hidden'
             }}>
-              <p>Made with love by Nathaniel & Eleanor</p>
-              <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>
-                © 2026 Vermilion Web Labs<br />
-                All Rights Reserved.
-              </p>
+              <div style={{ position: 'relative', zIndex: 1, opacity: 0.8 }}>
+                <p>Made with love by Nathaniel & Eleanor</p>
+                <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>
+                  © 2026 Vermilion Web Labs<br />
+                  All Rights Reserved.
+                </p>
+              </div>
+
+              {/* Red flower 2 as footer decoration (only top half visible) */}
+              <img 
+                src={flower2} 
+                alt="" 
+                style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: '50%',
+                  transform: 'translate(-50%, 50%)',
+                  width: '850px',
+                  maxWidth: 'none',
+                  opacity: 0.85,
+                  pointerEvents: 'none',
+                  zIndex: 0
+                }} 
+              />
             </footer>
           </div>
         </div>

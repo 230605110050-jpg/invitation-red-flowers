@@ -3,7 +3,7 @@ import { PiPaperPlaneRightFill, PiCheckCircleFill, PiXCircleFill } from 'react-i
 
 const RSVP = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({ name: '', attendance: 'yes', guests: '1', wishes: '' });
+  const [formData, setFormData] = useState({ name: '', attendance: 'yes', wishes: '' });
   
   const [comments, setComments] = useState([
     {
@@ -40,7 +40,7 @@ const RSVP = () => {
     
     setComments([newComment, ...comments]);
     setSubmitted(true);
-    setFormData({ name: '', attendance: 'yes', guests: '1', wishes: '' });
+    setFormData({ name: '', attendance: 'yes', wishes: '' });
     
     // Reset submission success message after 5 seconds so they can submit again if they want
     setTimeout(() => {
@@ -106,28 +106,6 @@ const RSVP = () => {
                 <option value="no">Sorry, I can't come</option>
               </select>
             </div>
-
-            {formData.attendance === 'yes' && (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', animation: 'fade-in-up 0.3s ease-out' }}>
-                <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Number of Guests</label>
-                <input 
-                  type="number" 
-                  name="guests"
-                  value={formData.guests}
-                  onChange={handleChange}
-                  min="1" max="5"
-                  style={{
-                    padding: '12px',
-                    borderRadius: '8px',
-                    border: '1px solid var(--glass-border)',
-                    background: 'rgba(0, 0, 0, 0.3)',
-                    color: 'var(--text-dark)',
-                    fontFamily: 'inherit',
-                    outline: 'none'
-                  }}
-                />
-              </div>
-            )}
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <label style={{ fontSize: '0.85rem', fontWeight: 600 }}>Wishes</label>

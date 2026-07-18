@@ -29,8 +29,9 @@ const WishingWell = () => {
           onClick={() => setIsOpen(!isOpen)}
           style={{ 
             position: 'relative', 
-            width: '320px', 
-            height: '320px', 
+            width: '100%', 
+            maxWidth: '320px', 
+            aspectRatio: '1/1',
             margin: '0 auto', 
             cursor: 'pointer',
             transition: 'transform 0.3s ease'
@@ -43,6 +44,7 @@ const WishingWell = () => {
               src={redFlowers} 
               alt="Wedding Gift" 
               className="wishing-well-main-flower"
+              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
             />
           </div>
           

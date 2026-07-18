@@ -1,51 +1,72 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PiPaperPlaneRightFill, PiCheckCircleFill, PiXCircleFill } from 'react-icons/pi';
+import { supabase } from '../supabaseClient';
 
 const RSVP = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({ name: '', attendance: 'yes', wishes: '' });
-  
-  const [comments, setComments] = useState([
-    {
-      id: 1,
-      name: 'Sarah & Family',
-      attendance: 'yes',
-      message: 'Happy wedding! Wishing you a lifetime of love and happiness.',
-      timestamp: '2 hours ago'
-    },
-    {
-      id: 2,
-      name: 'Michael',
-      attendance: 'no',
-      message: 'So sorry I couldn\'t make it. Wishing you both the best!',
-      timestamp: '5 hours ago'
+  const [comments, setComments] = useState([]);
+
+  useEffect(() => {
+    fetchComments();
+  }, []);
+
+  const fetchComments = async () => {
+    const { data, error } = await supabase
+      .from('comments')
+      .select('*')
+      .order('created_at', { ascending: false });
+      
+    if (error) {
+      console.error('Error fetching comments:', error);
+    } else {
+      setComments(data);
     }
-  ]);
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.wishes) return;
     
-    const newComment = {
-      id: Date.now(),
-      name: formData.name,
-      attendance: formData.attendance,
-      message: formData.wishes,
-      timestamp: 'Just now'
-    };
+    setIsLoading(true);
     
-    setComments([newComment, ...comments]);
-    setSubmitted(true);
-    setFormData({ name: '', attendance: 'yes', wishes: '' });
-    
-    // Reset submission success message after 5 seconds so they can submit again if they want
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 5000);
+    const { error } = await supabase
+      .from('comments')
+      .insert([
+        { 
+          name: formData.name, 
+          attendance: formData.attendance, 
+          message: formData.wishes 
+        }
+      ]);
+
+    setIsLoading(false);
+
+    if (error) {
+      console.error('Error inserting comment:', error);
+      alert('Gagal mengirim pesan, silakan coba lagi.');
+    } else {
+      setSubmitted(true);
+      setFormData({ name: '', attendance: 'yes', wishes: '' });
+      fetchComments(); // Refresh the list directly from DB
+      
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    }
+  };
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('id-ID', { 
+      day: 'numeric', month: 'short', year: 'numeric', 
+      hour: '2-digit', minute: '2-digit' 
+    });
   };
 
   return (
@@ -129,9 +150,9 @@ const RSVP = () => {
               />
             </div>
 
-            <button type="submit" className="glass-button" style={{ marginTop: '1rem', width: '100%' }}>
+            <button type="submit" disabled={isLoading} className="glass-button" style={{ marginTop: '1rem', width: '100%', opacity: isLoading ? 0.7 : 1 }}>
               <PiPaperPlaneRightFill />
-              Send
+              {isLoading ? 'Sending...' : 'Send'}
             </button>
           </form>
         )}
@@ -160,7 +181,7 @@ const RSVP = () => {
               }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.8rem' }}>
                   <strong style={{ fontSize: '1rem', color: 'var(--primary-color)' }}>{comment.name}</strong>
-                  <span style={{ fontSize: '0.75rem', opacity: 0.6 }}>{comment.timestamp}</span>
+                  <span style={{ fontSize: '0.75rem', opacity: 0.6 }}>{formatDate(comment.created_at)}</span>
                 </div>
                 <div style={{ 
                   display: 'flex', 
@@ -183,6 +204,11 @@ const RSVP = () => {
                 <p style={{ fontSize: '0.9rem', margin: 0, lineHeight: 1.5, opacity: 0.9 }}>"{comment.message}"</p>
               </div>
             ))}
+            {comments.length === 0 && (
+              <p style={{ textAlign: 'center', opacity: 0.6, fontSize: '0.9rem', fontStyle: 'italic', padding: '1rem' }}>
+                Belum ada pesan. Jadilah yang pertama memberikan ucapan!
+              </p>
+            )}
           </div>
         </div>
 

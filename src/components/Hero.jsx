@@ -42,7 +42,7 @@ const Hero = ({ onOpen }) => {
         
         {/* The Glass Panel */}
         <div className="glass-panel" style={{
-          padding: '2.5rem 5% 3.5rem', // responsive padding
+          padding: '4.5rem 5% 5rem', // responsive padding, increased to prevent overlap
           textAlign: 'center',
           position: 'relative',
           animation: 'fade-in-up 1s ease-out',
@@ -77,7 +77,7 @@ const Hero = ({ onOpen }) => {
             textTransform: 'uppercase',
             letterSpacing: '2px'
           }}>
-            Nathaniel
+            Aditya
           </h1>
           <span style={{ fontSize: 'clamp(1rem, 5vw, 1.2rem)', fontFamily: 'var(--font-heading)', margin: '0.5rem 0', color: 'var(--primary-color)' }}>&</span>
           <h1 style={{ 
@@ -88,7 +88,7 @@ const Hero = ({ onOpen }) => {
             textTransform: 'uppercase',
             letterSpacing: '2px'
           }}>
-            Eleanor
+            Nabila
           </h1>
 
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', margin: '1.5rem 0', width: '60%' }}>
@@ -109,9 +109,9 @@ const Hero = ({ onOpen }) => {
         {/* Decorative Overlapping Flowers */}
         <img src={flower4Kiri} alt="" style={{
           position: 'absolute',
-          top: '-15%',
-          left: '-15%',
-          width: '70%',
+          top: '-22%',
+          left: '-22%',
+          width: '65%',
           maxWidth: '250px',
           pointerEvents: 'none',
           zIndex: 2,
@@ -120,9 +120,9 @@ const Hero = ({ onOpen }) => {
 
         <img src={flower4Kanan} alt="" style={{
           position: 'absolute',
-          top: '-15%',
-          right: '-15%',
-          width: '70%',
+          top: '-22%',
+          right: '-22%',
+          width: '65%',
           maxWidth: '250px',
           pointerEvents: 'none',
           zIndex: 2,
@@ -165,7 +165,7 @@ const Hero = ({ onOpen }) => {
             fontSize: '1rem',
             borderRadius: '30px'
           }}>
-            Open Invitation
+            Buka Undangan
           </button>
         </div>
 

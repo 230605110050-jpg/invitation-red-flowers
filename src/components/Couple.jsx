@@ -1,5 +1,7 @@
 import React from 'react';
 import redFlower2 from '../assets/image/red flower 2.png';
+import priaImg from '../assets/image/pria.png';
+import wanitaImg from '../assets/image/wanita.png';
 
 const Couple = () => {
   return (
@@ -23,10 +25,10 @@ const Couple = () => {
                 boxShadow: 'var(--glass-shadow)',
                 background: 'var(--glass-bg)'
               }}>
-                {/* Placeholder image, can be replaced by real photo */}
+                {/* Photo Pria */}
                 <div style={{
                   width: '100%', height: '100%', 
-                  background: 'url(https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80) center/cover no-repeat'
+                  background: `url(${priaImg}) center/cover no-repeat`
                 }} />
               </div>
               
@@ -34,11 +36,14 @@ const Couple = () => {
               <img src={redFlower2} alt="" style={{ position: 'absolute', bottom: '-35px', left: '50%', transform: 'translateX(-50%)', width: '130px', zIndex: 2, filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }} />
             </div>
             <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>
-              Nathaniel
+              Aditya
             </h3>
-            <p style={{ fontSize: '0.9rem', fontWeight: 500, marginBottom: '0.5rem' }}>Nathaniel Alexander</p>
+            <h3 style={{ fontSize: '1rem', color: 'var(--primary-color)', marginBottom: '1.5rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
+              Mempelai Pria
+            </h3>
+            <p style={{ fontSize: '0.9rem', fontWeight: 500, marginBottom: '0.5rem' }}>Aditya Pratama</p>
             <p style={{ fontSize: '0.85rem', opacity: 0.7 }}>
-              Putra dari Bpk. Alexander & Ibu Sarah
+              Putra dari Bpk. Budi Pratama & Ibu Siti Aminah
             </p>
           </div>
 
@@ -58,10 +63,10 @@ const Couple = () => {
                 boxShadow: 'var(--glass-shadow)',
                 background: 'var(--glass-bg)'
               }}>
-                {/* Placeholder image, can be replaced by real photo */}
+                {/* Photo Wanita */}
                 <div style={{
                   width: '100%', height: '100%', 
-                  background: 'url(https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80) center/cover no-repeat'
+                  background: `url(${wanitaImg}) center/cover no-repeat`
                 }} />
               </div>
               
@@ -69,11 +74,14 @@ const Couple = () => {
               <img src={redFlower2} alt="" style={{ position: 'absolute', bottom: '-35px', left: '50%', transform: 'translateX(-50%)', width: '130px', zIndex: 2, filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.5))' }} />
             </div>
             <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '0.5rem' }}>
-              Eleanor
+              Nabila
             </h3>
-            <p style={{ fontSize: '0.9rem', fontWeight: 500, marginBottom: '0.5rem' }}>Eleanor Victoria</p>
+            <h3 style={{ fontSize: '1rem', color: 'var(--primary-color)', marginBottom: '1.5rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
+              Mempelai Wanita
+            </h3>
+            <p style={{ fontSize: '0.9rem', fontWeight: 500, marginBottom: '0.5rem' }}>Nabila Ayu</p>
             <p style={{ fontSize: '0.85rem', opacity: 0.7 }}>
-              Putri dari Bpk. William & Ibu Elizabeth
+              Putri dari Bpk. Joko Susanto & Ibu Rini Wulandari
             </p>
           </div>
         </div>

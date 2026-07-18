@@ -1,11 +1,41 @@
-import React from 'react';
-import { PiMapPinFill, PiCalendarBlankFill, PiClockFill, PiHeartFill } from 'react-icons/pi';
+import React, { useState, useEffect } from 'react';
+import { PiHeartFill } from 'react-icons/pi';
 
 const EventDetails = () => {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+  });
+
+  useEffect(() => {
+    const target = new Date('2026-11-28T09:00:00').getTime();
+    
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = target - now;
+      
+      if (distance < 0) {
+        clearInterval(interval);
+        return;
+      }
+      
+      setTimeLeft({
+        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+        seconds: Math.floor((distance % (1000 * 60)) / 1000)
+      });
+    }, 1000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="section-padding">
       <div className="glass-panel" style={{ padding: '3rem 1.5rem', textAlign: 'center' }}>
-        <h2 style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: '1.5rem' }}>Rangkaian Acara</h2>
+        
 
         {/* Visual Calendar */}
         <div className="animate-fade-in-up" style={{ marginBottom: '3rem' }}>
@@ -49,81 +79,155 @@ const EventDetails = () => {
         
         <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, var(--glass-border), transparent)', margin: '0 2rem 2.5rem' }} />
 
-        {/* Ceremony */}
-        <div style={{ marginBottom: '3rem' }} className="animate-fade-in-up">
-          <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '1rem' }}>
-            Akad Nikah
+        {/* Akad Nikah */}
+        <div className="animate-fade-in-up" style={{ marginBottom: '4rem' }}>
+          <h3 style={{ textTransform: 'uppercase', letterSpacing: '3px', fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--primary-dark)', fontWeight: 'bold' }}>
+            Informasi Akad Nikah
           </h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', alignItems: 'center' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <PiCalendarBlankFill color="var(--primary-color)" />
-              <span style={{ fontWeight: 500 }}>Sabtu, 28 November 2026</span>
+          <p style={{ textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '1px', marginBottom: '2rem', opacity: 0.8 }}>
+            Kami mengundang Anda untuk merayakan bersama kami pada:
+          </p>
+          <div style={{ fontSize: '3.5rem', fontFamily: 'var(--font-heading)', color: 'var(--primary-color)', marginBottom: '1.5rem' }}>
+            09:00
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem', color: 'var(--primary-dark)', width: '100%' }}>
+            <span style={{ flex: 1, textAlign: 'right' }}>Sabtu</span>
+            <div style={{ width: '1px', height: '40px', backgroundColor: 'var(--primary-color)', opacity: 0.5 }} />
+            <span style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', color: 'var(--primary-color)' }}>28</span>
+            <div style={{ width: '1px', height: '40px', backgroundColor: 'var(--primary-color)', opacity: 0.5 }} />
+            <span style={{ flex: 1, textAlign: 'left' }}>November</span>
+          </div>
+          <div style={{ fontSize: '1.2rem', letterSpacing: '3px', marginBottom: '3rem', color: 'var(--primary-dark)' }}>
+            2026
+          </div>
+          
+          <div style={{ display: 'flex', justifyContent: 'space-around', width: '100%', maxWidth: '350px', margin: '0 auto 2.5rem' }}>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '0.5rem', opacity: 0.8 }}>Kehadiran Tamu</div>
+              <div style={{ fontSize: '1.5rem', fontFamily: 'var(--font-heading)', color: 'var(--primary-color)' }}>08:30</div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <PiClockFill color="var(--primary-color)" />
-              <span style={{ fontWeight: 500 }}>09:00 AM - 11:00 AM</span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', marginTop: '0.5rem' }}>
-              <PiMapPinFill color="var(--primary-color)" style={{ marginTop: '0.2rem' }} />
-              <div style={{ textAlign: 'left' }}>
-                <strong style={{ display: 'block', marginBottom: '0.2rem' }}>Masjid Agung Istiqlal</strong>
-                <span style={{ fontSize: '0.85rem', opacity: 0.8 }}>Jl. Taman Wijaya Kusuma, Jakarta Pusat</span>
-              </div>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '0.5rem', opacity: 0.8 }}>Akad Dimulai</div>
+              <div style={{ fontSize: '1.5rem', fontFamily: 'var(--font-heading)', color: 'var(--primary-color)' }}>09:00</div>
             </div>
           </div>
-          <a href="https://maps.google.com/?q=Masjid+Istiqlal" target="_blank" rel="noreferrer" className="glass-button" style={{ display: 'inline-block', marginTop: '1.5rem', fontSize: '0.9rem', padding: '8px 20px', textDecoration: 'none' }}>
-            Buka di Google Maps
-          </a>
-          <div style={{ marginTop: '1.5rem', width: '100%', height: '250px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', boxShadow: '0 4px 15px rgba(0,0,0,0.5)' }}>
+
+          <p style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Masjid Agung Istiqlal</p>
+          <p style={{ fontSize: '0.9rem', opacity: 0.8, marginBottom: '1.5rem' }}>Jl. Taman Wijaya Kusuma, Jakarta Pusat</p>
+          
+          <div style={{ width: '100%', height: '200px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', boxShadow: '0 4px 15px rgba(0,0,0,0.2)' }}>
             <iframe 
-              width="100%" 
-              height="100%" 
-              frameBorder="0" 
+              width="100%" height="100%" frameBorder="0" 
               style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(85%)' }} 
-              src="https://maps.google.com/maps?q=Jakarta+Cathedral&t=&z=14&ie=UTF8&iwloc=&output=embed" 
-              allowFullScreen 
-              title="Ceremony Location"
+              src="https://maps.google.com/maps?q=Masjid+Istiqlal&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+              allowFullScreen title="Ceremony Location"
+            />
+          </div>
+        </div>
+
+        <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, var(--glass-border), transparent)', margin: '0 2rem 4rem' }} />
+
+        {/* Resepsi */}
+        <div className="animate-fade-in-up" style={{ animationDelay: '0.2s', marginBottom: '4rem' }}>
+          <h3 style={{ textTransform: 'uppercase', letterSpacing: '3px', fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--primary-dark)', fontWeight: 'bold' }}>
+            Informasi Resepsi
+          </h3>
+          <p style={{ textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '1px', marginBottom: '2rem', opacity: 0.8 }}>
+            Kami mengundang Anda untuk merayakan bersama kami pada:
+          </p>
+          <div style={{ fontSize: '3.5rem', fontFamily: 'var(--font-heading)', color: 'var(--primary-color)', marginBottom: '1.5rem' }}>
+            19:00
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '0.9rem', color: 'var(--primary-dark)', width: '100%' }}>
+            <span style={{ flex: 1, textAlign: 'right' }}>Sabtu</span>
+            <div style={{ width: '1px', height: '40px', backgroundColor: 'var(--primary-color)', opacity: 0.5 }} />
+            <span style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', color: 'var(--primary-color)' }}>28</span>
+            <div style={{ width: '1px', height: '40px', backgroundColor: 'var(--primary-color)', opacity: 0.5 }} />
+            <span style={{ flex: 1, textAlign: 'left' }}>November</span>
+          </div>
+          <div style={{ fontSize: '1.2rem', letterSpacing: '3px', marginBottom: '3rem', color: 'var(--primary-dark)' }}>
+            2026
+          </div>
+          
+          <div style={{ display: 'flex', justifyContent: 'space-around', width: '100%', maxWidth: '350px', margin: '0 auto 2.5rem' }}>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '0.5rem', opacity: 0.8 }}>Kehadiran Tamu</div>
+              <div style={{ fontSize: '1.5rem', fontFamily: 'var(--font-heading)', color: 'var(--primary-color)' }}>18:30</div>
+            </div>
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: '0.5rem', opacity: 0.8 }}>Resepsi Dimulai</div>
+              <div style={{ fontSize: '1.5rem', fontFamily: 'var(--font-heading)', color: 'var(--primary-color)' }}>19:00</div>
+            </div>
+          </div>
+
+          <p style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>Hotel Mulia Senayan</p>
+          <p style={{ fontSize: '0.9rem', opacity: 0.8, marginBottom: '1.5rem' }}>Jl. Asia Afrika, Senayan, Jakarta Pusat</p>
+          
+          <div style={{ width: '100%', height: '200px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', boxShadow: '0 4px 15px rgba(0,0,0,0.2)' }}>
+            <iframe 
+              width="100%" height="100%" frameBorder="0" 
+              style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(85%)' }} 
+              src="https://maps.google.com/maps?q=Hotel+Mulia+Senayan&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+              allowFullScreen title="Reception Location"
             />
           </div>
         </div>
 
         <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, var(--glass-border), transparent)', margin: '0 2rem 3rem' }} />
 
-        {/* Reception */}
-        <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-          <h3 className="script-text" style={{ fontSize: 'clamp(2rem, 8vw, 2.5rem)', color: 'var(--primary-dark)', marginBottom: '1rem' }}>
-            Resepsi Pernikahan
+        {/* Countdown */}
+        <div className="animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <h3 style={{ textTransform: 'uppercase', letterSpacing: '3px', fontSize: '1rem', marginBottom: '1.5rem', color: 'var(--primary-dark)', fontWeight: 'bold' }}>
+            Menghitung Hari
           </h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', alignItems: 'center' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <PiCalendarBlankFill color="var(--primary-color)" />
-              <span style={{ fontWeight: 500 }}>Sabtu, 28 November 2026</span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <PiClockFill color="var(--primary-color)" />
-              <span style={{ fontWeight: 500 }}>06:30 PM - 10:00 PM</span>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', marginTop: '0.5rem' }}>
-              <PiMapPinFill color="var(--primary-color)" style={{ marginTop: '0.2rem' }} />
-              <div style={{ textAlign: 'left' }}>
-                <strong style={{ display: 'block', marginBottom: '0.2rem' }}>Hotel Mulia Senayan</strong>
-                <span style={{ fontSize: '0.85rem', opacity: 0.8 }}>Jl. Asia Afrika, Senayan, Jakarta Pusat</span>
+          <div style={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center',
+            background: 'rgba(61, 12, 12, 0.8)', // dark theme background
+            border: '1px solid rgba(212, 175, 55, 0.3)', // subtle gold border
+            borderRadius: '20px',
+            padding: '1.5rem 0.5rem',
+            gap: '0.2rem',
+            boxShadow: '0 15px 35px rgba(0,0,0,0.4)',
+            maxWidth: '380px',
+            margin: '0 auto',
+            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)'
+          }}>
+            <div style={{ flex: 1, textAlign: 'center' }}>
+              <div style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', color: '#fff', lineHeight: 1, fontWeight: 'bold' }}>
+                {String(timeLeft.days).padStart(2, '0')}
               </div>
+              <div style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '2px', opacity: 0.7, marginTop: '0.8rem', color: '#fff' }}>Hari</div>
             </div>
-          </div>
-          <a href="https://maps.google.com/?q=Hotel+Mulia+Senayan" target="_blank" rel="noreferrer" className="glass-button" style={{ display: 'inline-block', marginTop: '1.5rem', fontSize: '0.9rem', padding: '8px 20px', textDecoration: 'none' }}>
-            Buka di Google Maps
-          </a>
-          <div style={{ marginTop: '1.5rem', width: '100%', height: '250px', borderRadius: '12px', overflow: 'hidden', border: '1px solid var(--glass-border)', boxShadow: '0 4px 15px rgba(0,0,0,0.5)' }}>
-            <iframe 
-              width="100%" 
-              height="100%" 
-              frameBorder="0" 
-              style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(85%)' }} 
-              src="https://maps.google.com/maps?q=Jakarta&t=&z=14&ie=UTF8&iwloc=&output=embed" 
-              allowFullScreen 
-              title="Reception Location"
-            />
+            
+            <div style={{ width: '1px', height: '50px', backgroundColor: 'rgba(255,255,255,0.2)' }} />
+            
+            <div style={{ flex: 1, textAlign: 'center' }}>
+              <div style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', color: '#fff', lineHeight: 1, fontWeight: 'bold' }}>
+                {String(timeLeft.hours).padStart(2, '0')}
+              </div>
+              <div style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '2px', opacity: 0.7, marginTop: '0.8rem', color: '#fff' }}>Jam</div>
+            </div>
+            
+            <div style={{ width: '1px', height: '50px', backgroundColor: 'rgba(255,255,255,0.2)' }} />
+            
+            <div style={{ flex: 1, textAlign: 'center' }}>
+              <div style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', color: '#fff', lineHeight: 1, fontWeight: 'bold' }}>
+                {String(timeLeft.minutes).padStart(2, '0')}
+              </div>
+              <div style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '2px', opacity: 0.7, marginTop: '0.8rem', color: '#fff' }}>Menit</div>
+            </div>
+            
+            <div style={{ width: '1px', height: '50px', backgroundColor: 'rgba(255,255,255,0.2)' }} />
+            
+            <div style={{ flex: 1, textAlign: 'center' }}>
+              <div style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', color: '#fff', lineHeight: 1, fontWeight: 'bold' }}>
+                {String(timeLeft.seconds).padStart(2, '0')}
+              </div>
+              <div style={{ fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '2px', opacity: 0.7, marginTop: '0.8rem', color: '#fff' }}>Detik</div>
+            </div>
           </div>
         </div>
 

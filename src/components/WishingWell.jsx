@@ -115,7 +115,7 @@ const WishingWell = () => {
             <p style={{ fontSize: '1.5rem', letterSpacing: '3px', fontFamily: 'monospace', marginBottom: '0.5rem', color: 'var(--primary-color)' }}>
               1234567890
             </p>
-            <p style={{ fontSize: '0.9rem', marginBottom: '2rem', opacity: 0.8 }}>a.n Nathaniel Alexander</p>
+            <p style={{ fontSize: '0.9rem', marginBottom: '2rem', opacity: 0.8 }}>a.n Aditya Pratama</p>
             
             <button 
               onClick={handleCopy}

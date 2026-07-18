@@ -105,10 +105,11 @@ const Schedule = () => {
                 width: '50%', 
                 paddingRight: '2.5rem', 
                 textAlign: 'right', 
-                fontWeight: '600', 
+                fontWeight: 'bold', 
                 color: 'var(--primary-color)',
-                fontSize: '1.1rem',
-                fontFamily: 'var(--font-heading)'
+                fontSize: '2rem',
+                fontFamily: 'var(--font-heading)',
+                lineHeight: '1.1'
               }}>
                 {item.time}
               </div>

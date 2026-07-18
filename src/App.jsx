@@ -162,46 +162,43 @@ function App() {
               <img src={flower2} alt="" style={{ position: 'absolute', bottom: '0', left: '30%', width: '300px', opacity: 0.3, filter: 'blur(6px)', transform: 'rotate(90deg)', animation: 'float 15s ease-in-out infinite' }} />
             </div>
 
-            {/* Centered Content Container for Desktop */}
-            <div style={{ maxWidth: '480px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 10 }}>
-              {/* Greeting */}
-              <div style={{ textAlign: 'center', marginBottom: '2rem', padding: '0 1.5rem' }}>
-                <div style={{
-                  background: 'var(--glass-bg)',
-                  backdropFilter: 'blur(8px)',
-                  padding: '2rem 1.5rem',
-                  borderRadius: '16px',
-                  border: '1px solid var(--glass-border)',
-                  boxShadow: 'var(--glass-shadow)'
-                }}>
-                  <h3 className="script-text" style={{ fontSize: '2rem', color: 'var(--primary-dark)', marginBottom: '1rem' }}>
-                    Welcome to Our Wedding
-                  </h3>
-                  <p style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-                    With the grace and blessing of God, we cordially invite you to our wedding celebration.
-                  </p>
-                </div>
-              </div>
-
-              <Couple />
-              <EventDetails />
-              <WishingWell />
-              <RSVP />
-
-              {/* Footer */}
-              <footer style={{
-                textAlign: 'center',
-                padding: '2rem 1.5rem 4rem',
-                opacity: 0.8,
-                fontSize: '0.85rem'
+            {/* Greeting */}
+            <div style={{ textAlign: 'center', marginBottom: '2rem', padding: '0 1.5rem' }}>
+              <div style={{
+                background: 'var(--glass-bg)',
+                backdropFilter: 'blur(8px)',
+                padding: '2rem 1.5rem',
+                borderRadius: '16px',
+                border: '1px solid var(--glass-border)',
+                boxShadow: 'var(--glass-shadow)'
               }}>
-                <p>Made with love by Nathaniel & Eleanor</p>
-                <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>
-                  © 2026 Vermilion Web Labs<br />
-                  All Rights Reserved.
+                <h3 className="script-text" style={{ fontSize: '2rem', color: 'var(--primary-dark)', marginBottom: '1rem' }}>
+                  Welcome to Our Wedding
+                </h3>
+                <p style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+                  With the grace and blessing of God, we cordially invite you to our wedding celebration.
                 </p>
-              </footer>
+              </div>
             </div>
+
+            <Couple />
+            <EventDetails />
+            <WishingWell />
+            <RSVP />
+
+            {/* Footer */}
+            <footer style={{
+              textAlign: 'center',
+              padding: '2rem 1.5rem 4rem',
+              opacity: 0.8,
+              fontSize: '0.85rem'
+            }}>
+              <p>Made with love by Nathaniel & Eleanor</p>
+              <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', opacity: 0.6 }}>
+                © 2026 Vermilion Web Labs<br />
+                All Rights Reserved.
+              </p>
+            </footer>
           </div>
         </div>
       )}

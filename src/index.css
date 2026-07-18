@@ -33,13 +33,21 @@ html, body {
 
 /* Mobile App Container */
 #root {
-  max-width: 480px;
-  margin: 0 auto;
+  width: 100%;
   min-height: 100vh;
   position: relative;
-  background: #0a0202; /* Base color before background layer */
-  overflow: hidden;
-  box-shadow: 0 0 40px rgba(0,0,0,0.1);
+  background: #0a0202; 
+  overflow-x: hidden;
+}
+
+/* Centered content wrapper for desktop responsiveness */
+.content-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  background: rgba(10, 2, 2, 0.3);
+  box-shadow: 0 0 50px rgba(0,0,0,0.5);
+  min-height: 100vh;
 }
 
 /* Typography */

@@ -31,15 +31,13 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Mobile App Container */
+/* Responsive App Container */
 #root {
-  max-width: 480px;
-  margin: 0 auto;
+  width: 100%;
   min-height: 100vh;
   position: relative;
-  background: #0a0202; /* Base color before background layer */
+  background: #0a0202;
   overflow: hidden;
-  box-shadow: 0 0 40px rgba(0,0,0,0.1);
 }
 
 /* Typography */
